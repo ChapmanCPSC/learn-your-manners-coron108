@@ -12,6 +12,10 @@
 		71CDC1531CC02A8E00A747E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71CDC1511CC02A8E00A747E7 /* Main.storyboard */; };
 		71CDC1551CC02A8E00A747E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71CDC1541CC02A8E00A747E7 /* Assets.xcassets */; };
 		71CDC1581CC02A8E00A747E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71CDC1561CC02A8E00A747E7 /* LaunchScreen.storyboard */; };
+		71CDC1601CC02BF000A747E7 /* Manners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDC15F1CC02BF000A747E7 /* Manners.swift */; };
+		71CDC1631CC047BC00A747E7 /* Manners Detail View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDC1611CC047BC00A747E7 /* Manners Detail View.swift */; };
+		71CDC1671CC049EA00A747E7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CDC1651CC049EA00A747E7 /* TableViewCell.swift */; };
+		71CDC1681CC049EA00A747E7 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71CDC1661CC049EA00A747E7 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		71CDC1541CC02A8E00A747E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71CDC1571CC02A8E00A747E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71CDC1591CC02A8E00A747E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71CDC15F1CC02BF000A747E7 /* Manners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manners.swift; sourceTree = "<group>"; };
+		71CDC1611CC047BC00A747E7 /* Manners Detail View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Manners Detail View.swift"; sourceTree = "<group>"; };
+		71CDC1651CC049EA00A747E7 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		71CDC1661CC049EA00A747E7 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,10 @@
 				71CDC1541CC02A8E00A747E7 /* Assets.xcassets */,
 				71CDC1561CC02A8E00A747E7 /* LaunchScreen.storyboard */,
 				71CDC1591CC02A8E00A747E7 /* Info.plist */,
+				71CDC15F1CC02BF000A747E7 /* Manners.swift */,
+				71CDC1611CC047BC00A747E7 /* Manners Detail View.swift */,
+				71CDC1651CC049EA00A747E7 /* TableViewCell.swift */,
+				71CDC1661CC049EA00A747E7 /* TableViewCell.xib */,
 			);
 			path = "Manners App";
 			sourceTree = "<group>";
@@ -124,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CDC1581CC02A8E00A747E7 /* LaunchScreen.storyboard in Resources */,
+				71CDC1681CC049EA00A747E7 /* TableViewCell.xib in Resources */,
 				71CDC1551CC02A8E00A747E7 /* Assets.xcassets in Resources */,
 				71CDC1531CC02A8E00A747E7 /* Main.storyboard in Resources */,
 			);
@@ -136,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CDC1671CC049EA00A747E7 /* TableViewCell.swift in Sources */,
 				71CDC1501CC02A8E00A747E7 /* ViewController.swift in Sources */,
 				71CDC14E1CC02A8E00A747E7 /* AppDelegate.swift in Sources */,
+				71CDC1631CC047BC00A747E7 /* Manners Detail View.swift in Sources */,
+				71CDC1601CC02BF000A747E7 /* Manners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
