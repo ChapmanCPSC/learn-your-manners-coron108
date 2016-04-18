@@ -10,7 +10,6 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellCheckImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
     
     override func awakeFromNib() {
@@ -27,11 +26,7 @@ class TableViewCell: UITableViewCell {
     func initCell(manner : Manners)
     {
         self.cellLabel.text = manner.mannerName
-        self.cellCheckImage.image = UIImage(named: "checkMark")
+        
     }
     
-    func intImg()
-    {
-        self.cellCheckImage.image = UIImage(named: "checkMark")
-    }
 }

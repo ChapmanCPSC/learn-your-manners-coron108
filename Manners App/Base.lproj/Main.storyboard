@@ -37,7 +37,6 @@
         <!--Manners Detail View-->
         <scene sceneID="cBc-hE-vJt">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sQQ-5X-QXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Yvt-50-E0O" customClass="Manners_Detail_View" customModule="Manners_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yxG-Rd-yYf"/>
@@ -87,6 +86,7 @@
                         <outlet property="imageView" destination="SPI-62-CBf" id="13A-xC-fDz"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQQ-5X-QXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1197" y="307"/>
         </scene>

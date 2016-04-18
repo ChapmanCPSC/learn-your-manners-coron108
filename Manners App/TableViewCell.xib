@@ -16,29 +16,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqE-QE-nwc">
-                        <rect key="frame" x="16" y="11" width="208" height="21"/>
+                        <rect key="frame" x="16" y="11" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2sS-RB-2hg">
-                        <rect key="frame" x="262" y="0.0" width="50" height="43"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="50" id="Tmu-b7-5iQ"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="qqE-QE-nwc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="1Qu-Zx-obf"/>
-                    <constraint firstItem="2sS-RB-2hg" firstAttribute="leading" secondItem="qqE-QE-nwc" secondAttribute="trailing" constant="38" id="Esu-KC-o8q"/>
                     <constraint firstItem="qqE-QE-nwc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Pei-cJ-IM1"/>
-                    <constraint firstItem="2sS-RB-2hg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="e48-8B-Eum"/>
-                    <constraint firstItem="2sS-RB-2hg" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="iT3-PT-7at"/>
-                    <constraint firstItem="2sS-RB-2hg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="oRC-9v-dnm"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cellCheckImage" destination="2sS-RB-2hg" id="5rd-ts-6zf"/>
                 <outlet property="cellLabel" destination="qqE-QE-nwc" id="3aG-Lp-o66"/>
             </connections>
         </tableViewCell>
