@@ -6,9 +6,12 @@
 //  Copyright © 2016 Danny Corona. All rights reserved.
 //
 
+import MessageUI
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    
+    @IBOutlet weak var sendSummaryText: UIBarButtonItem!
     
     var m : [Manners] = [
         Manners(mannerName: "Eye Contact", description: "To maintain appropriate eye contact without staring, you should maintain eye contact for 50 percent of the time while speaking and 70% of the time while listening. This helps to display interest and confidence.", mannerImage: UIImage(named: "eyeContact")),
@@ -20,6 +23,8 @@ class ViewController: UITableViewController {
             Manners(mannerName: "Please and Thank You", description: "When asking for something, say 'Please. When receiving something, say 'Thank you.' Be especially appreciative and say 'thank you' for any gift you receive.", mannerImage: UIImage(named: "pleaseAndThankYou")),
             Manners(mannerName: "Knocking", description: "Knock on closed doors and wait to see if there's a response before entering.", mannerImage: UIImage(named: "knocking")),
         ]
+    
+    var itemsClicked : [String] = []
   
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +39,23 @@ class ViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let enteredEmail = userDefaults.stringForKey("userEmail")
+        
+        if (enteredEmail == nil)
+        {
+            sendSummaryText.title = ""
+        }
+        
+        else
+        {
+         sendSummaryText.title = "Send Summary"
+        }
+    }
+
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -56,6 +78,11 @@ class ViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         
         tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        
+        if !self.itemsClicked.contains(self.m[indexPath.row].mannerName)
+        {
+            self.itemsClicked.append(self.m[indexPath.row].mannerName)
+        }
     
         let navVC = self.storyboard!.instantiateViewControllerWithIdentifier("detail_view") as! UINavigationController
         
@@ -65,6 +92,44 @@ class ViewController: UITableViewController {
         self.presentViewController(navVC, animated: true, completion: nil)
     
     }
+    
 
+    @IBAction func sendSummaryPressed(sender: AnyObject) {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        
+        let userDefaults = NSUserDefaults()
+        var message = ""
+        
+        composeVC.setToRecipients([userDefaults.stringForKey("userEmail")!])
+        composeVC.setSubject("Summary From Manners App")
+        
+        for item in itemsClicked
+        {
+            message += "\(item) \n"
+        }
+        
+        composeVC.setMessageBody("Items clicked:\n \(message)", isHTML: false)
+        
+        if itemsClicked == []
+        {
+            composeVC.setMessageBody("No items were clicked", isHTML: false)
+        }
+        
+
+        
+        self.presentViewController(composeVC, animated: true, completion: nil)
+       
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    @IBAction func settingsPressed(sender: AnyObject) {
+        let emailVC = self.storyboard!.instantiateViewControllerWithIdentifier("email_view")
+        
+        self.presentViewController(emailVC, animated: true, completion: nil)
+    }
 }
 

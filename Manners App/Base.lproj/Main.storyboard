@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LRS-no-zGZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lcw-RJ-FWU">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kfc-hR-qPF">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kfc-hR-qPF" id="G60-De-W5v">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -29,10 +29,88 @@
                             <outlet property="delegate" destination="LRS-no-zGZ" id="aZx-fA-C02"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="uoZ-9f-m5q">
+                        <barButtonItem key="leftBarButtonItem" title="Send Summary" id="AiQ-sv-CgT">
+                            <connections>
+                                <action selector="sendSummaryPressed:" destination="LRS-no-zGZ" id="wpv-MY-9Pl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="cqQ-CY-FSw">
+                            <connections>
+                                <action selector="settingsPressed:" destination="LRS-no-zGZ" id="EOs-VH-rRC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sendSummaryText" destination="AiQ-sv-CgT" id="BES-i7-CPg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aE6-Wa-mDT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="313"/>
+            <point key="canvasLocation" x="527" y="313"/>
+        </scene>
+        <!--Email View Controller-->
+        <scene sceneID="SML-4R-xf5">
+            <objects>
+                <viewController storyboardIdentifier="email_view" id="6M2-jG-EGu" customClass="EmailViewController" customModule="Manners_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z4Z-0x-2xX"/>
+                        <viewControllerLayoutGuide type="bottom" id="vWc-z2-6Zm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1pv-Tk-tHu">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-GS-70I">
+                                <rect key="frame" x="145" y="207" width="311" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="311" id="yVd-5h-4gT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2OA-HD-3Kk">
+                                <rect key="frame" x="208" y="142" width="184" height="21"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Send summary email to:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8g-bN-b2j">
+                                        <rect key="frame" x="0.0" y="0.0" width="184" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weS-Mm-ETD">
+                                <rect key="frame" x="282" y="274" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="6M2-jG-EGu" eventType="touchUpInside" id="W3p-rR-Xhe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2OA-HD-3Kk" firstAttribute="centerX" secondItem="1pv-Tk-tHu" secondAttribute="centerX" id="5t1-5z-Mp6"/>
+                            <constraint firstItem="weS-Mm-ETD" firstAttribute="top" secondItem="dm4-GS-70I" secondAttribute="bottom" constant="37" id="MLE-ck-4wX"/>
+                            <constraint firstItem="dm4-GS-70I" firstAttribute="top" secondItem="2OA-HD-3Kk" secondAttribute="bottom" constant="44" id="SKX-g4-oIw"/>
+                            <constraint firstItem="2OA-HD-3Kk" firstAttribute="centerX" secondItem="dm4-GS-70I" secondAttribute="centerX" id="ck0-WJ-ZIO"/>
+                            <constraint firstItem="dm4-GS-70I" firstAttribute="centerX" secondItem="1pv-Tk-tHu" secondAttribute="centerX" id="ejg-zv-eR1"/>
+                            <constraint firstItem="2OA-HD-3Kk" firstAttribute="top" secondItem="z4Z-0x-2xX" secondAttribute="bottom" constant="122" id="h2h-Kh-nVK"/>
+                            <constraint firstItem="weS-Mm-ETD" firstAttribute="centerX" secondItem="dm4-GS-70I" secondAttribute="centerX" id="wJe-k7-f4q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ejg-zv-eR1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="dm4-GS-70I" id="TLZ-1i-JAo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ary-q6-aAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="1008"/>
         </scene>
         <!--Manners Detail View-->
         <scene sceneID="cBc-hE-vJt">
@@ -88,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQQ-5X-QXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="307"/>
+            <point key="canvasLocation" x="2009" y="307"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pnq-7b-ER1">
@@ -106,7 +184,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZXk-jR-80f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="307"/>
+            <point key="canvasLocation" x="1197" y="307"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jIg-tp-dSs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lcw-RJ-FWU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bRB-RN-PTN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LRS-no-zGZ" kind="relationship" relationship="rootViewController" id="zpp-D3-hli"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p0t-fM-voq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="313"/>
         </scene>
     </scenes>
 </document>
